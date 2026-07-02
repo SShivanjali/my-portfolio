@@ -15,7 +15,7 @@ export default function Jewelry() {
         <div className="jewelry-row row1">
           <video
             className="r1-curtain-vid"
-            src="/jewelry/curtain-480p.mp4"
+            src="/jewelry/curtain.mp4"
             autoPlay
             loop
             muted
@@ -33,7 +33,7 @@ export default function Jewelry() {
               <div className="collage-wrapper swirling-wrapper">
                 <img
                   className="piece-img"
-                  src="/jewelry/swirling-dream/piece.png"
+                  src="/jewelry/swirling-dream/piece.webp"
                   alt="Swirling dream necklace"
                 />
 
@@ -70,7 +70,7 @@ export default function Jewelry() {
               <div className="collage-wrapper swan-wrapper">
                 <img
                   className="piece-img"
-                  src="/jewelry/swan/piece.png"
+                  src="/jewelry/swan/piece.webp"
                   alt="2 swans ring"
                 />
 
@@ -91,7 +91,7 @@ export default function Jewelry() {
               <div className="collage-wrapper cats-barette-wrapper">
                 <img
                   className="piece-img"
-                  src="/jewelry/cats-barette/piece.png"
+                  src="/jewelry/cats-barette/piece.webp"
                   alt="cats barrette"
                 />
 
@@ -115,7 +115,7 @@ export default function Jewelry() {
               <div className="collage-wrapper labyrinth-wrapper">
                 <img
                   className="piece-img"
-                  src="/jewelry/labyrinth/piece.png"
+                  src="/jewelry/labyrinth/piece.webp"
                   alt="star coiled necklace"
                 />
 
@@ -144,7 +144,7 @@ export default function Jewelry() {
               <div className="collage-wrapper cyberpunk-wrapper">
                 <img
                   className="piece-img"
-                  src="/jewelry/cyberpunk/piece.png"
+                  src="/jewelry/cyberpunk/piece.webp"
                   alt="vivayou watch"
                 />
 
@@ -173,7 +173,7 @@ export default function Jewelry() {
               <div className="collage-wrapper moth-wrapper">
                 <img
                   className="piece-img"
-                  src="/jewelry/moth/piece.png"
+                  src="/jewelry/moth/piece.webp"
                   alt="vivayou watch"
                 />
 

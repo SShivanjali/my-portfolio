@@ -60,7 +60,7 @@ export default function Scene({ setShowIdCard }) {
           <div className="scene-label scene-label-books">books✮</div>
         )}
 
-        <img src="/lamp.gif" alt="lamp" className="scene-lamp" />
+        <img src="/lamp.webp" alt="lamp" className="scene-lamp" />
 
         <HoverImage
           src="/cam.png"
@@ -107,7 +107,7 @@ export default function Scene({ setShowIdCard }) {
 
         <div onClick={() => setShowIdCard(true)}>
           <HoverImage
-            src="/laptop.gif"
+            src="/laptop.webp"
             hoverSrc="/laptop-hover.png"
             alt="laptop"
             className="scene-laptop-wrapper"
