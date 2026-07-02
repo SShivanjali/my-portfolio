@@ -1,0 +1,263 @@
+.jewelry-page {
+  width: 100vw;
+  height: 100vh;
+  transition: background-color 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.jewelry-frame {
+  position: relative;
+  width: 96vw;
+  height: 98vh;
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: 90px 1fr 45px;
+  transition: background-color 0.5s ease;
+}
+
+.jewelry-row {
+  position: relative;
+  width: 100%;
+}
+
+.row1,
+.row2 {
+  border-bottom: 3px solid black;
+}
+
+.row2 {
+  overflow-y: auto;
+  scroll-snap-type: y mandatory; /* makes scrolling snap to each jewelry piece, like Instagram reels */
+}
+
+/* contains all the collages */
+.jewelry-carousel {
+  width: 100%;
+}
+
+/* each collage occupies one screen */
+.jewelry-slide {
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .jewelry-slide img {
+  display: block;
+  width: 65%;
+  height: auto;
+} */
+
+.collage-wrapper {
+  position: relative;
+  width: 70%;
+}
+
+.piece-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* every extra text/arrow image */
+.collage-wrapper img:not(.piece-img) {
+  position: absolute;
+  display: block;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.1;
+  transition:opacity 0.5s ease;
+}
+
+.collage-wrapper:hover img:not(.piece-img) {
+    opacity: 1;
+}
+
+
+/* sd */
+.sd-t1 {
+  top: 8%;
+  left: 15%;
+  width: 25%;
+}
+
+.sd-t2 {
+  top: 50%;
+  right: 19%;
+  width: 12%;
+}
+
+.sd-t3 {
+  top: 69.5%;
+  left: 15%;
+  width: 15%;
+}
+
+.sd-t4 {
+  bottom: -1%;
+  right: 37%;
+  width: 9%;
+  /* transform: rotate(-45deg); */
+}
+
+.sd-arrow1 {
+  top: 66%;
+  left: 28%;
+  width: 15%;
+  transform: rotate(-10deg);
+}
+
+.sd-arrow2 {
+  bottom: 1.5%;
+  left: 48.5%;
+  width: 5%;
+  transform: rotate(-68deg);
+}
+
+
+/* swan */
+.swan-t1 {
+  top: 10%;
+  left: 20%;
+  width: 17%;
+}
+
+.swan-t2 {
+  top: 30%;
+  right: 35%;
+  width: 12%;
+}
+
+.swan-t3 {
+  top: 52%;
+  right: 15%;
+  width: 15%;
+}
+
+.swan-t4 {
+  bottom: 16%;
+  right: 55%;
+  width: 14%;
+}
+
+.swan-arrow1 {
+  top: 66.8%;
+  left: 35%;
+  width: 14%;
+  transform: rotate(-47deg);
+}
+
+.swan-arrow2 {
+  bottom: 48%;
+  left: 55%;
+  width: 5%;
+  transform: rotate(-160deg);
+}
+
+
+/* cats-barette */
+.cats-barette-wrapper {
+  width: 48%;
+}
+
+.cats-barette-t1 {
+  top: 28%;
+  left: 61%;
+  width: 60%;
+}
+
+.cats-barette-t2 {
+  top: 58%;
+  right: 32%;
+  width: 35%;
+}
+
+
+/* labyrinth */
+.labyrinth-wrapper {
+  width: 39%;
+}
+
+.labyrinth-t1 {
+  top: 5%;
+  left: 76%;
+  width: 20%;
+}
+
+.labyrinth-t2 {
+  top: 23%;
+  right: 26%;
+  width: 40%;
+}
+
+.labyrinth-t3 {
+  top: 54%;
+  right: 12%;
+  width: 45%;
+}
+
+/* cyberpunk */
+.cyberpunk-wrapper {
+  width: 66%;
+}
+
+.cyberpunk-t1 {
+  top: 16%;
+  left: 44%;
+  width: 32%;
+}
+
+.cyberpunk-t2 {
+  top: 17%;
+  right: 60%;
+  width: 30%;
+}
+
+.cyberpunk-t3 {
+  top: 81.5%;
+  right: 40%;
+  width: 33%;
+}
+
+
+/* moth */
+.moth-wrapper {
+  width: 63%;
+}
+
+.moth-t1 {
+  top: 18%;
+  left: 60.5%;
+  width: 32%;
+}
+
+
+.row1 {
+  overflow: hidden;
+}
+
+.r1-curtain-vid {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+  pointer-events: none;
+}
+
+.quote-img {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  top: 70px;
+}
