@@ -49,7 +49,7 @@ export default function BooksPage() {
         }}
       >
         <img
-          src="/books/banner.gif"
+          src="/books/banner.webp"
           alt="header"
           style={{
             width: "100%",
