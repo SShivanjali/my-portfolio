@@ -133,7 +133,7 @@ export default function BooksPage() {
 
           {/* normal-ppl */}
           <img
-            src="books/normal-ppl.png"
+            src="books/normal-ppl.webp"
             alt="normal people"
             style={{
               position: "absolute",
@@ -145,7 +145,7 @@ export default function BooksPage() {
 
           {/* readers digest */}
           <img
-            src="books/readersdigest.png"
+            src="books/readersdigest.webp"
             alt="readers digest"
             style={{
               position: "absolute",
@@ -157,7 +157,7 @@ export default function BooksPage() {
 
           {/* lfa */}
           <img
-            src="books/lfa.png"
+            src="books/lfa.webp"
             alt="looking for alaska"
             onClick={() => setShowLFA(true)}
             style={{
@@ -174,7 +174,7 @@ export default function BooksPage() {
 
           {/* veg */}
           <img
-            src="books/veg.png"
+            src="books/veg.webp"
             alt="the vegetarian"
             style={{
               position: "absolute",
@@ -186,7 +186,7 @@ export default function BooksPage() {
 
           {/* belljar */}
           <img
-            src="books/belljar.png"
+            src="books/belljar.webp"
             alt="the belljar"
             style={{
               position: "absolute",
@@ -198,7 +198,7 @@ export default function BooksPage() {
 
           {/* turtles */}
           <img
-            src="books/turtles.png"
+            src="books/turtles.webp"
             alt="turtles all the way down"
             style={{
               position: "absolute",
@@ -210,7 +210,7 @@ export default function BooksPage() {
 
           {/* hardboiled */}
           <img
-            src="books/hardboiled.png"
+            src="books/hardboiled.webp"
             alt="hard-boiled wonderland and the end of the world"
             style={{
               position: "absolute",
@@ -222,7 +222,7 @@ export default function BooksPage() {
 
           {/* midlib */}
           <img
-            src="books/midlib.png"
+            src="books/midlib.webp"
             alt="the midnight library"
             style={{
               position: "absolute",
@@ -234,7 +234,7 @@ export default function BooksPage() {
 
           {/* morisaki */}
           <img
-            src="books/morisaki.png"
+            src="books/morisaki.webp"
             alt="days at the morisaki bookshop"
             style={{
               position: "absolute",
@@ -246,7 +246,7 @@ export default function BooksPage() {
 
           {/* shakespeare */}
           <img
-            src="books/shakespeare.png"
+            src="books/shakespeare.webp"
             alt="tales from shakespeare"
             style={{
               position: "absolute",
@@ -258,7 +258,7 @@ export default function BooksPage() {
 
           {/* After-dark */}
           <img
-            src="books/After-dark.png"
+            src="books/After-dark.webp"
             alt="After dark"
             style={{
               position: "absolute",
@@ -270,7 +270,7 @@ export default function BooksPage() {
 
           {/* book-thief */}
           <img
-            src="books/book-thief.png"
+            src="books/book-thief.webp"
             alt="the book thief"
             style={{
               position: "absolute",
@@ -282,7 +282,7 @@ export default function BooksPage() {
 
           {/* frankenstein */}
           <img
-            src="books/frankenstein.png"
+            src="books/frankenstein.webp"
             alt="frankenstein"
             style={{
               position: "absolute",
@@ -294,7 +294,7 @@ export default function BooksPage() {
 
           {/* me-b4-u */}
           <img
-            src="books/me-b4-u.png"
+            src="books/me-b4-u.webp"
             alt="me before you"
             style={{
               position: "absolute",
@@ -306,7 +306,7 @@ export default function BooksPage() {
 
           {/* Norwegian-Wood */}
           <img
-            src="books/Norwegian-Wood.png"
+            src="books/Norwegian-Wood.webp"
             alt="Norwegian Wood"
             style={{
               position: "absolute",
@@ -318,7 +318,7 @@ export default function BooksPage() {
 
           {/* almond */}
           <img
-            src="books/almond.png"
+            src="books/almond.webp"
             alt="almond"
             style={{
               position: "absolute",
@@ -345,7 +345,7 @@ export default function BooksPage() {
 
           {/* 7-husbands-of-evelyn-hugo */}
           <img
-            src="books/7-husbands-of-evelyn-hugo.png"
+            src="books/7-husbands-of-evelyn-hugo.webp"
             alt="7 husbands of evelyn hugo"
             style={{
               position: "absolute",
@@ -357,7 +357,7 @@ export default function BooksPage() {
 
           {/* fault-in-our-stars */}
           <img
-            src="books/fault-in-our-stars.png"
+            src="books/fault-in-our-stars.webp"
             alt="the fault in our stars"
             style={{
               position: "absolute",
@@ -369,7 +369,7 @@ export default function BooksPage() {
 
           {/* after-the-quake */}
           <img
-            src="books/after-the-quake.png"
+            src="books/after-the-quake.webp"
             alt="after the quake"
             style={{
               position: "absolute",
@@ -381,7 +381,7 @@ export default function BooksPage() {
 
           {/* girl-on-the-train */}
           <img
-            src="books/girl-on-the-train.png"
+            src="books/girl-on-the-train.webp"
             alt="the girl on the train"
             style={{
               position: "absolute",
@@ -393,7 +393,7 @@ export default function BooksPage() {
 
           {/* agggtm */}
           <img
-            src="books/agggtm.png"
+            src="books/agggtm.webp"
             alt="a good girl's guide to murderad"
             style={{
               position: "absolute",
@@ -405,7 +405,7 @@ export default function BooksPage() {
 
           {/* agad */}
           <img
-            src="books/agad.png"
+            src="books/agad.webp"
             alt="as good as dead"
             style={{
               position: "absolute",
@@ -417,7 +417,7 @@ export default function BooksPage() {
 
           {/* b4-p1 */}
           <img
-            src="books/b4-p1.png"
+            src="books/b4-p1.webp"
             alt="before the coffee gets cold"
             style={{
               position: "absolute",
@@ -429,7 +429,7 @@ export default function BooksPage() {
 
           {/* luvhypo */}
           <img
-            src="books/luvhypo.png"
+            src="books/luvhypo.webp"
             alt="the love hypothesis"
             style={{
               position: "absolute",
@@ -441,7 +441,7 @@ export default function BooksPage() {
 
           {/* Sharp-objects */}
           <img
-            src="books/Sharp-objects.png"
+            src="books/Sharp-objects.webp"
             alt="Sharp objects"
             style={{
               position: "absolute",
@@ -453,7 +453,7 @@ export default function BooksPage() {
 
           {/* sil-pat */}
           <img
-            src="books/sil-pat.png"
+            src="books/sil-pat.webp"
             alt="the silent patient"
             style={{
               position: "absolute",
@@ -465,7 +465,7 @@ export default function BooksPage() {
 
           {/* verity */}
           <img
-            src="books/verity.png"
+            src="books/verity.webp"
             alt="verity"
             style={{
               position: "absolute",
@@ -477,7 +477,7 @@ export default function BooksPage() {
 
           {/* it-ends-w-us */}
           <img
-            src="books/it-ends-w-us.png"
+            src="books/it-ends-w-us.webp"
             alt="it ends with us"
             style={{
               position: "absolute",
@@ -489,7 +489,7 @@ export default function BooksPage() {
 
           {/* it-starts-w-us */}
           <img
-            src="books/it-starts-w-us.png"
+            src="books/it-starts-w-us.webp"
             alt="it starts with us"
             style={{
               position: "absolute",
@@ -501,7 +501,7 @@ export default function BooksPage() {
 
           {/* american-roommate */}
           <img
-            src="books/american-roommate.png"
+            src="books/american-roommate.webp"
             alt="the american roommate experiment"
             style={{
               position: "absolute",
@@ -513,7 +513,7 @@ export default function BooksPage() {
 
           {/* The-loneliest-girl-in-the-universe */}
           <img
-            src="books/The-loneliest-girl-in-the-universe.png"
+            src="books/The-loneliest-girl-in-the-universe.webp"
             alt="The loneliest girl in the universe"
             style={{
               position: "absolute",
@@ -535,7 +535,7 @@ export default function BooksPage() {
 
       {/* letter */}
       <img
-        src="/books/letter.png"
+        src="/books/letter.webp"
         alt="letter"
         style={{
           position: "fixed",
