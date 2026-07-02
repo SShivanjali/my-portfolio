@@ -26,7 +26,7 @@ export default function Home() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src="/id-card.png"
+              src="/id-card.webp"
               alt="ID Card"
               className="id-card"
             />
