@@ -24,7 +24,7 @@ export default function Background() {
 
       $(overlayRef.current).ripples({
         resolution: 256,
-        perturbance: 0.01,
+        perturbance: 0.08,
         interactive: true,
       });
     }
@@ -44,7 +44,7 @@ export default function Background() {
     <div className="background-wrap">
       <video
         ref={videoRef}
-        src="/underwater_bg.mp4"
+        src="/underwater.mp4"
         autoPlay
         loop
         muted

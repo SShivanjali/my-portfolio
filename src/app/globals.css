@@ -449,7 +449,7 @@ body {
 
   object-fit: cover;
 
-  filter: brightness(1.2) contrast(1.2) saturate(1) hue-rotate(10deg);
+  filter: brightness(1) contrast(1.2) saturate(1) hue-rotate(10deg);
 }
 
 .bg-overlay {
