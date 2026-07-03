@@ -102,7 +102,7 @@ export default function IntroModal({ onClose, isClosing }) {
             paddingLeft: "24px",
           }}
         >
-          <li>Drag to explore the canvas</li>
+          <li>Drag in any direction to explore the canvas</li>
           <li>Click an artwork to open it</li>
           <li>Click the artwork again to get to know more about it</li>
         </ul>
