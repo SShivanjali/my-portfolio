@@ -3,13 +3,13 @@ import { useState } from "react";
 import HoverImage from "./HoverImage";
 import Link from "next/link";
 
-export default function Scene({ setShowIdCard }) {
+export default function Scene({ setShowIdCard, introStage }) {
   const [standHover, setStandHover] = useState(null);
   const [cabinetHover, setCabinetHover] = useState(null);
   // const [showIdCard, setShowIdCard] = useState(false);
 
   return (
-    <div className="scene-container">
+    <div className={`scene-container ${ introStage === 0 ? "intro-blurred" : "" }`}>
       {/* LEFT: cabinet and the items above it */}
       <div className="scene-cabinet-group">
         <img

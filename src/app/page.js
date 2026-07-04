@@ -6,14 +6,15 @@ import IntroText from "@/components/IntroText";
 import Scene from "@/components/Scene";
 
 export default function Home() {
+  const [introStage, setIntroStage] = useState(0);
   const [showIdCard, setShowIdCard] = useState(false);
 
   return (
     <main>
       <div className={showIdCard ? "page-blurred" : ""}>
         <Background />
-        <IntroText />
-        <Scene setShowIdCard={setShowIdCard} />
+        <IntroText stage={introStage} setStage={setIntroStage} />
+        <Scene setShowIdCard={setShowIdCard} introStage={introStage} />
       </div>
 
       {showIdCard && (

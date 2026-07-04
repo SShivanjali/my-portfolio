@@ -1,9 +1,14 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export default function IntroText() {
-  const [stage, setStage] = useState(0);
+const sparkleData = Array.from({ length: 12 }, () => ({
+  top: `${Math.random() * 100}%`,
+  left: `${Math.random() * 100}%`,
+  animationDelay: `${Math.random() * 4}s`,
+  animationDuration: `${3 + Math.random() * 3}s`,
+}));
 
+export default function IntroText({ stage, setStage }) {
   useEffect(() => {
     const t1 = setTimeout(() => setStage(1), 1200);
     const t2 = setTimeout(() => setStage(2), 1800);
@@ -12,19 +17,6 @@ export default function IntroText() {
       clearTimeout(t2);
     };
   }, []);
-
-  useEffect(() => {
-    const scene = document.querySelector('.scene-container');
-    if (!scene) return;
-    if (stage === 0) {
-      // scene.style.filter = 'blur(5px)';
-      // scene.style.transition = 'filter 0.6s ease';
-      scene.classList.add("intro-blurred");
-    } else {
-      // scene.style.filter = 'blur(0px)';
-      scene.classList.remove("intro-blurred");
-    }
-  }, [stage]);
   
   return (
     <>
@@ -135,18 +127,17 @@ function Text() {
 }
 
 function Sparkles() {
-  const sparkles = Array.from({ length: 12 });
   return (
     <>
-      {sparkles.map((_, i) => (
+      {sparkleData.map((sparkle, i) => (
         <span
           key={i}
           className="sparkle"
           style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 4}s`,
-            animationDuration: `${3 + Math.random() * 3}s`,
+            top: sparkle.top,
+            left: sparkle.left,
+            animationDelay: sparkle.animationDelay,
+            animationDuration: sparkle.animationDuration,
           }}
         />
       ))}
