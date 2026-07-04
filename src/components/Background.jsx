@@ -24,7 +24,7 @@ export default function Background() {
 
       $(overlayRef.current).ripples({
         resolution: 256,
-        perturbance: 0.08,
+        perturbance: 0.01,
         interactive: true,
       });
     }
