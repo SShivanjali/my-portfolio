@@ -85,7 +85,7 @@ body {
   position: absolute;
   font-family: var(--font-homemade-apple);
   color: #e8f4f8;
-  font-size: 1.3rem;
+  font-size: clamp(0.3rem, 1.5vw, 1.3rem);
   pointer-events: none;
   white-space: nowrap;
 }

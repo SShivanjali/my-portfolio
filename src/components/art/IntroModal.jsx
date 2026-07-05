@@ -23,23 +23,19 @@ export default function IntroModal({ onClose, isClosing }) {
     >
       <div
         style={{
-          width: "450px",
-          padding: "40px",
+          width: "min(450px, 80vw)",
+          boxSizing: "border-box",
+          padding: "clamp(22px, 6vw, 40px)",
           background: "rgba(20, 20, 20, 0.75)",
           border: "1px solid rgba(255,255,255,0.12)",
           borderRadius: "10px",
           color: "white",
-          // textAlign: "center",
-          //           display: "flex",
-          // flexDirection: "column",
-          // justifyContent: "center",
-          // alignItems: "center",
         }}
       >
         <h1
           style={{
             marginBottom: "18px",
-            fontSize: "25px",
+            fontSize: "clamp(1.1rem, 5vw, 25px)",
             fontWeight: 600,
             textAlign: "center",
             letterSpacing: "0.06em",
@@ -61,8 +57,8 @@ export default function IntroModal({ onClose, isClosing }) {
             // fontSize: "15px",
           }}
         >
-          A collection of collages, edits, and visual notes inspired by words
-          that linger a little longer than they should.
+          A collection of collages and video edits inspired by words
+          that stood out to me.
         </p>
 
         <p

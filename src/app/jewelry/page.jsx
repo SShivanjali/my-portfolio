@@ -3,14 +3,34 @@ import { useState } from "react";
 import "./jewelry.css";
 
 export default function Jewelry() {
-  const [bgColor, setBgColor] = useState("#cbb8a4");
+  const [bgColor, setBgColor] = useState("#d3beaa");
+  const colors = [
+    "#d3beaa",
+    "#d7b9a4",
+    "#bc9d86",
+    "#f4c49d",
+    "#cebda3",
+    "#bc9c83",
+  ];
+
+  const handleScroll = (e) => {
+    const slideHeight = e.currentTarget.clientHeight;
+    const scrollPosition = e.currentTarget.scrollTop;
+
+    const index = Math.min(
+      Math.round(scrollPosition / slideHeight),
+      colors.length - 1,
+    );
+    setBgColor(colors[index]);
+  };
+
   return (
     <main className="jewelry-page" style={{ backgroundColor: bgColor }}>
       <div className="jewelry-frame">
         <img
           className="quote-img"
           src="/jewelry/quote.png"
-          alt="Jewelry title qupote"
+          alt="Jewelry title quote"
         />
         <div className="jewelry-row row1">
           <video
@@ -23,13 +43,9 @@ export default function Jewelry() {
           />
         </div>
 
-        <div className="jewelry-row row2">
+        <div className="jewelry-row row2" onScroll={handleScroll}>
           <div className="jewelry-carousel">
-
-            <div
-              className="jewelry-slide"
-              onMouseEnter={() => setBgColor("#d3beaa")}
-            >
+            <div className="jewelry-slide">
               <div className="collage-wrapper swirling-wrapper">
                 <img
                   className="piece-img"
@@ -63,10 +79,7 @@ export default function Jewelry() {
               </div>
             </div>
 
-            <div
-              className="jewelry-slide"
-              onMouseEnter={() => setBgColor("#d7b9a4")}
-            >
+            <div className="jewelry-slide">
               <div className="collage-wrapper swan-wrapper">
                 <img
                   className="piece-img"
@@ -84,10 +97,7 @@ export default function Jewelry() {
               </div>
             </div>
 
-            <div
-              className="jewelry-slide"
-              onMouseEnter={() => setBgColor("#bc9d86")}
-            >
+            <div className="jewelry-slide">
               <div className="collage-wrapper cats-barette-wrapper">
                 <img
                   className="piece-img"
@@ -108,10 +118,7 @@ export default function Jewelry() {
               </div>
             </div>
 
-            <div
-              className="jewelry-slide"
-              onMouseEnter={() => setBgColor("#f4c49d")}
-            >
+            <div className="jewelry-slide">
               <div className="collage-wrapper labyrinth-wrapper">
                 <img
                   className="piece-img"
@@ -137,10 +144,7 @@ export default function Jewelry() {
               </div>
             </div>
 
-            <div
-              className="jewelry-slide"
-              onMouseEnter={() => setBgColor("#cebda3")}
-            >
+            <div className="jewelry-slide">
               <div className="collage-wrapper cyberpunk-wrapper">
                 <img
                   className="piece-img"
@@ -166,10 +170,7 @@ export default function Jewelry() {
               </div>
             </div>
 
-            <div
-              className="jewelry-slide"
-              onMouseEnter={() => setBgColor("#bc9c83")}
-            >
+            <div className="jewelry-slide">
               <div className="collage-wrapper moth-wrapper">
                 <img
                   className="piece-img"
@@ -177,15 +178,9 @@ export default function Jewelry() {
                   alt="vivayou watch"
                 />
 
-                <img
-                  className="moth-t1"
-                  src="/jewelry/moth/t1.png"
-                  alt=""
-                />
+                <img className="moth-t1" src="/jewelry/moth/t1.png" alt="" />
               </div>
             </div>
-
-
           </div>
         </div>
 

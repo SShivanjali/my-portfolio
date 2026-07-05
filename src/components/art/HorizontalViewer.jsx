@@ -36,10 +36,10 @@ export default function HorizontalViewer({
 
   // close dropdown if detail opens
   useEffect(() => {
-  if (isDetailOpen) {
-    setIsDropdownOpen(false);
-  }
-}, [isDetailOpen]);
+    if (isDetailOpen) {
+      setIsDropdownOpen(false);
+    }
+  }, [isDetailOpen]);
 
   // keyboard navigation
   useEffect(() => {
@@ -235,6 +235,8 @@ export default function HorizontalViewer({
     );
   }
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 600;
+
   return (
     <div
       onClick={(e) => {
@@ -269,8 +271,8 @@ export default function HorizontalViewer({
       >
         <div
           style={{
-            width: "250px",
-            height: "260px",
+            width: isMobile ? "90px" : "250px",
+            height: isMobile ? "100px" : "260px",
             overflow: "hidden",
             display: "flex",
             alignItems: "center",
@@ -294,12 +296,17 @@ export default function HorizontalViewer({
           top: "50%",
           transform: "translate(-50%, -50%)",
           transition: "all 0.4s ease",
-          maxWidth: "50vw",
+          width: isMobile ? "60vw" : "auto",
+          maxWidth:
+            isMobile && isDetailOpen ? "45vw" : isMobile ? "82vw" : "50vw",
           zIndex: 53,
           cursor: isDetailOpen ? "default" : "pointer",
         }}
       >
-        {renderMedia(currArt, "70vh")}
+        {renderMedia(
+          currArt,
+          isMobile && isDetailOpen ? "35vh" : isMobile ? "58vh" : "70vh",
+        )}
       </div>
 
       {isDetailOpen && (
@@ -331,8 +338,8 @@ export default function HorizontalViewer({
       >
         <div
           style={{
-            width: "250px",
-            height: "260px",
+            width: isMobile ? "90px" : "250px",
+            height: isMobile ? "100px" : "260px",
             overflow: "hidden",
             display: "flex",
             alignItems: "center",
@@ -348,13 +355,13 @@ export default function HorizontalViewer({
         onClick={(e) => e.stopPropagation()}
         style={{
           position: "fixed",
-          bottom: 32,
+          bottom: isMobile ? 18 : 32,
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 55,
           display: "flex",
           alignItems: "center",
-          gap: "12px",
+          gap: isMobile ? "4px" : "12px",
         }}
       >
         {/* PREVIOUS BUTTON */}
@@ -397,12 +404,12 @@ export default function HorizontalViewer({
               borderRadius: "0px",
               color: "rgba(255,255,255,0.8)",
               fontSize: "13px",
-              padding: "10px 24px",
+              padding: isMobile ? "8px 12px" : "10px 24px",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "10px",
-              width: "340px",
+              width: isMobile ? "270px" : "340px",
               justifyContent: "space-between",
               letterSpacing: "0.05em",
               opacity: isDetailOpen ? 0.4 : 1,
@@ -438,7 +445,7 @@ export default function HorizontalViewer({
                 border: "1px solid rgba(255,255,255,0.12)",
                 borderRadius: "0px",
                 overflow: "hidden",
-                width: "340px",
+                width: isMobile ? "270px" : "340px",
                 maxHeight: "320px",
                 overflowY: "auto",
                 // custom scrollbar
@@ -455,8 +462,8 @@ export default function HorizontalViewer({
                     setIsDropdownOpen(false); // close after selecting
                   }}
                   style={{
-                    padding: "12px 20px",
-                    fontSize: "13px",
+                    padding: isMobile ? "8px 12px" : "10px 24px",
+                    fontSize: isMobile ? "11px" : "13px",
                     color:
                       i === currentIndex
                         ? "rgba(255,255,255,1)" // current art = full white

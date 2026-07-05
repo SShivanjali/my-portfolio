@@ -210,8 +210,8 @@ export default function ArtGrid({ onArtClick, isViewerOpen }) {
           this.rect = el.getBoundingClientRect();
           const { left, top } = this.rect;
 
-          const width = this.art.width;
-          const height = this.art.height;
+          const width = this.rect.width;
+          const height = this.rect.height;
 
           const domWidth = this.rect.width;
           const domHeight = this.rect.height;

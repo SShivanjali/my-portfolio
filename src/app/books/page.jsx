@@ -41,7 +41,7 @@ export default function BooksPage() {
       <div
         style={{
           position: "fixed",
-          top: "-20px",
+          top: "0px",
           left: 0,
           width: "100%",
           zIndex: 2,
@@ -62,13 +62,13 @@ export default function BooksPage() {
           style={{
             position: "absolute",
             zIndex: 2,
-            top: "5%",
-            left: "25%",
+            top: "4%",
+            left: "20%",
 
             // transform: "translate(-50%, -50%)",
 
             fontFamily: "StNicholas",
-            fontSize: "clamp(2rem, 5vw, 4rem)",
+            fontSize: "clamp(0.6rem, 5vw, 4.5rem)",
             whiteSpace: "nowrap",
 
             color: "black",
@@ -113,7 +113,7 @@ export default function BooksPage() {
         style={{
           position: "relative",
           zIndex: 1,
-          marginTop: "100px",
+          marginTop: "7.5vw",
         }}
       >
         <div style={{ position: "relative" }}>
@@ -543,7 +543,7 @@ export default function BooksPage() {
           right: "-5px",
           bottom: "10px",
 
-          width: "190px",
+          width: "clamp(80px, 13vw, 190px)",
           height: "auto",
 
           zIndex: 2,
@@ -552,53 +552,23 @@ export default function BooksPage() {
           transformOrigin: "center center",
         }}
       />
-      {
-  showLFA && (
+      {showLFA && (
+        <div className="book-overlay" onClick={() => setShowLFA(false)}>
+          <div className="book-popup" onClick={(e) => e.stopPropagation()}>
+            <button className="book-close" onClick={() => setShowLFA(false)}>
+              ✕
+            </button>
 
-    <div
-      className="book-overlay"
-
-      onClick={() => setShowLFA(false)}
-    >
-
-      <div
-
-        className="book-popup"
-
-        onClick={(e) => e.stopPropagation()}
-      >
-
-        <button
-
-          className="book-close"
-
-          onClick={() => setShowLFA(false)}
-        >
-
-          ✕
-
-        </button>
-
-        <iframe
-
-          allowFullScreen
-
-          allow="clipboard-write"
-
-          scrolling="no"
-
-          src="https://heyzine.com/flip-book/3adc4775b5.html"
-
-          className="book-iframe"
-
-        />
-
-      </div>
-
-    </div>
-
-  )
-}
+            <iframe
+              allowFullScreen
+              allow="clipboard-write"
+              scrolling="no"
+              src="https://heyzine.com/flip-book/3adc4775b5.html"
+              className="book-iframe"
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }

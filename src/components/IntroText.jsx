@@ -60,20 +60,20 @@ export default function IntroText({ stage, setStage }) {
             alt="mermaid"
             style={{
               position: "fixed",
-              top: "-20px",
+              top: "0.1 vw",
               left: "50%",
               transform: "translateX(-50%)",
               zIndex: 49,
-              width: "300px",
+              width: "clamp(100px, 22vw, 300px)",
               pointerEvents: "none",
             }}
           />
           <div
             style={{
               position: "fixed",
-              top: "-30px",
+              top: "-23px",
               left: "50%",
-              transform: "translateX(-50%) scale(0.42)",
+              transform: "translateX(-50%) scale(0.45)",
               pointerEvents: "none",
               zIndex: 50,
             }}
@@ -104,6 +104,7 @@ function Text() {
           margin: 0,
           position: "relative",
           zIndex: 2,
+          whiteSpace: "nowrap",
         }}
       >
         Webspace 511
@@ -120,7 +121,7 @@ function Text() {
           zIndex: 1,
         }}
       >
-        Neveah&apos;s Haven
+        Webspace 511
       </div>
     </div>
   );
