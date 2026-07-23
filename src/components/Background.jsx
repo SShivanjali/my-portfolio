@@ -23,8 +23,8 @@ export default function Background() {
       if (!overlayRef.current) return;
 
       $(overlayRef.current).ripples({
-        resolution: 256,
-        perturbance: 0.01,
+        resolution: 200,
+        perturbance: 0.005,
         interactive: true,
       });
     }
@@ -53,6 +53,6 @@ export default function Background() {
       />
 
       <div ref={overlayRef} className="bg-overlay" />
-    </div>
+    // </div>
   );
 }
