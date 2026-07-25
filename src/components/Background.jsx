@@ -53,6 +53,6 @@ export default function Background() {
       />
 
       <div ref={overlayRef} className="bg-overlay" />
-    // </div>
+    </div>
   );
 }

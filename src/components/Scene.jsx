@@ -9,7 +9,9 @@ export default function Scene({ setShowIdCard, introStage }) {
   // const [showIdCard, setShowIdCard] = useState(false);
 
   return (
-    <div className={`scene-container ${ introStage === 0 ? "intro-blurred" : "" }`}>
+    <div
+      className={`scene-container ${introStage === 0 ? "intro-blurred" : ""}`}
+    >
       {/* LEFT: cabinet and the items above it */}
       <div className="scene-cabinet-group">
         <img
@@ -33,7 +35,10 @@ export default function Scene({ setShowIdCard, introStage }) {
           onMouseLeave={() => setCabinetHover(null)}
         />
         {cabinetHover === "cake" && (
-          <div className="scene-label scene-label-cake">fav foods𓌉◯𓇋</div>
+          <div className="scene-label scene-label-cake">
+            fav foods𓌉◯𓇋
+            <div>coming soon ♡</div>
+          </div>
         )}
 
         {/* jewelry hotspot */}
@@ -68,7 +73,13 @@ export default function Scene({ setShowIdCard, introStage }) {
           alt="camera"
           className="scene-camera-wrapper"
           hoverClassName="scene-camera-hover"
-          label="my clicks ⛶"
+          label={
+            <>
+              my clicks ⛶
+              <br />
+              coming soon ♡
+            </>
+          }
           labelClassName="scene-label-camera"
         />
 
@@ -78,7 +89,13 @@ export default function Scene({ setShowIdCard, introStage }) {
           alt="popcorn"
           className="scene-popcorn-wrapper"
           hoverClassName="scene-popcorn-hovered"
-          label="movie time? [ ▶︎ ]"
+          label={
+            <>
+              movie time? [ ▶︎ ]
+              <br />
+              coming soon ♡
+            </>
+          }
           labelClassName="scene-label-popcorn"
         />
 
@@ -88,7 +105,13 @@ export default function Scene({ setShowIdCard, introStage }) {
           alt="diary"
           className="scene-diary-wrapper"
           hoverClassName="scene-diary-hovered"
-          label="drafts / archives 𖡎"
+          label={
+            <>
+              drafts / archives 𖡎
+              <br />
+              coming soon ♡
+            </>
+          }
           labelClassName="scene-label-diary"
         />
       </div>
@@ -101,7 +124,13 @@ export default function Scene({ setShowIdCard, introStage }) {
           alt="guitar"
           className="scene-guitar-wrapper"
           hoverClassName="scene-guitar-hovered"
-          label="songs i listen to 𖦤"
+          label={
+            <>
+              songs i listen to 𖦤
+              <br />
+              coming soon ♡
+            </>
+          }
           labelClassName="scene-label-guitar"
         />
 
@@ -152,6 +181,8 @@ export default function Scene({ setShowIdCard, introStage }) {
         {standHover === "clothes" && (
           <div className="scene-label scene-label-clothes">
             𑣲let's play dress up°❀⋆.ೃ࿔
+            <br />
+            coming soon ♡
           </div>
         )}
 
@@ -162,7 +193,11 @@ export default function Scene({ setShowIdCard, introStage }) {
           onMouseLeave={() => setStandHover(null)}
         />
         {standHover === "shoes" && (
-          <div className="scene-label scene-label-shoes">𓂇 footwear</div>
+          <div className="scene-label scene-label-shoes">
+            𓂇 footwear
+            <br />
+            coming soon ♡
+          </div>
         )}
       </div>
     </div>
