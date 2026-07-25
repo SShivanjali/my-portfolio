@@ -4,50 +4,41 @@ import { useEffect, useRef } from "react";
 
 export default function Background() {
   const videoRef = useRef(null);
-  const overlayRef = useRef(null);
+  // const overlayRef = useRef(null);
 
-  // useEffect(() => {
-  //   let $;
+  useEffect(() => {
+    // let $;
 
-  //   let isMounted = true;
+    // async function initRipples() {
+    //   // load jquery only in browser
+    //   $ = (await import("jquery")).default;
 
-  //   const overlay = overlayRef.current;
-  //   const video = videoRef.current;
+    //   // load the ripple plugin only in browser
+    //   await import("jquery.ripples");
 
-  //   async function initRipples() {
-  //     // load jquery only in browser
-  //     $ = (await import("jquery")).default;
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.7;
+    }
 
-  //     if (!isMounted || !overlay) return;
+    //   if (!overlayRef.current) return;
 
-  //     // load the ripple plugin only in browser
-  //     await import("jquery.ripples");
+    //   $(overlayRef.current).ripples({
+    //     resolution: 200,
+    //     perturbance: 0.005,
+    //     interactive: true,
+    //   });
+    // }
 
-  //     if (!isMounted || !overlay) return;
+    // initRipples();
 
-  //     if (video) {
-  //       video.playbackRate = 0.7;
-  //     }
-
-  //     $(overlay).ripples({
-  //       resolution: 200,
-  //       perturbance: 0.005,
-  //       interactive: true,
-  //     });
-  //   }
-
-  //   initRipples();
-
-  //   return () => {
-  //     isMounted = false;
-
-  //     try {
-  //       if ($ && overlay) {
-  //         $(overlay).ripples("destroy");
-  //       }
-  //     } catch {}
-  //   };
-  // }, []);
+    // return () => {
+    //   try {
+    //     if ($ && overlayRef.current) {
+    //       $(overlayRef.current).ripples("destroy");
+    //     }
+    //   } catch {}
+    // };
+  }, []);
 
   return (
     <div className="background-wrap">
@@ -61,7 +52,8 @@ export default function Background() {
         className="bg-video"
       />
 
-      <div ref={overlayRef} className="bg-overlay" />
+      <div className="bg-overlay" />
+      <div className="bg-overlay" />
     </div>
   );
 }

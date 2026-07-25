@@ -494,7 +494,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   filter: brightness(1) contrast(1.4) saturate(1) hue-rotate(10deg);
-  opacity: 0.7;
+  opacity: 0.5;
   pointer-events: auto;
 }
 
