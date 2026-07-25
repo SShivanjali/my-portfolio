@@ -6,39 +6,48 @@ export default function Background() {
   const videoRef = useRef(null);
   const overlayRef = useRef(null);
 
-  useEffect(() => {
-    let $;
+  // useEffect(() => {
+  //   let $;
 
-    async function initRipples() {
-      // load jquery only in browser
-      $ = (await import("jquery")).default;
+  //   let isMounted = true;
 
-      // load the ripple plugin only in browser
-      await import("jquery.ripples");
+  //   const overlay = overlayRef.current;
+  //   const video = videoRef.current;
 
-      if (videoRef.current) {
-        videoRef.current.playbackRate = 0.7;
-      }
+  //   async function initRipples() {
+  //     // load jquery only in browser
+  //     $ = (await import("jquery")).default;
 
-      if (!overlayRef.current) return;
+  //     if (!isMounted || !overlay) return;
 
-      $(overlayRef.current).ripples({
-        resolution: 200,
-        perturbance: 0.005,
-        interactive: true,
-      });
-    }
+  //     // load the ripple plugin only in browser
+  //     await import("jquery.ripples");
 
-    initRipples();
+  //     if (!isMounted || !overlay) return;
 
-    return () => {
-      try {
-        if ($ && overlayRef.current) {
-          $(overlayRef.current).ripples("destroy");
-        }
-      } catch {}
-    };
-  }, []);
+  //     if (video) {
+  //       video.playbackRate = 0.7;
+  //     }
+
+  //     $(overlay).ripples({
+  //       resolution: 200,
+  //       perturbance: 0.005,
+  //       interactive: true,
+  //     });
+  //   }
+
+  //   initRipples();
+
+  //   return () => {
+  //     isMounted = false;
+
+  //     try {
+  //       if ($ && overlay) {
+  //         $(overlay).ripples("destroy");
+  //       }
+  //     } catch {}
+  //   };
+  // }, []);
 
   return (
     <div className="background-wrap">
