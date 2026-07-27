@@ -1,0 +1,54 @@
+.laptop-container {
+  position: absolute;
+  bottom: 1vh;
+  left: 75%;
+  width: 21.5vw;
+
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.laptop-image {
+  width: 100%;
+  /* display: block; */
+}
+
+.laptop-screen {
+  position: absolute;
+
+  top: 7%;
+  left: 17%;
+
+  width: 65%;
+  height: 42%;
+  /* rotate: 1deg; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: rgba(255, 0, 0, 0.2); */
+}
+
+.visitors-log-button {
+  width: 80%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.visitors-log-button-image {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  transition: transform 0.1s ease;
+}
+
+.visitors-log-button:hover .visitors-log-button-image {
+  transform: translateY(-8px);
+}
+
+.visitors-log-button:active .visitors-log-button-image {
+  transform: translateY(0);
+}

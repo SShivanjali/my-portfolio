@@ -1,0 +1,193 @@
+.visitorsLog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: red;
+  cursor: pointer;
+}
+
+.message{
+  color: #c0c0c0;
+  font-family: "Lucida Console", Monaco, monospace;
+  margin-bottom: 0.3rem;
+  line-height: 1;
+  font-size: 0.7rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.nameInput,
+.messageInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #c0c0c0;
+  font-size: 0.7rem;
+}
+
+.messageInput {
+  resize: none;
+  width: 92%;
+  max-height: 4rem;
+}
+
+.messageInput::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messageInput::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+}
+
+.messageRow {
+  display: flex;
+  align-items: flex-start;
+}
+
+.sendButton {
+  border: none;
+  background: transparent;
+  color: #8a8a8a;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.sendButton:hover {
+  color: #c0c0c0;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+}
+
+
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+}
+
+.sendArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.charCount {
+  font-size: 0.6rem;
+  color: #8a8a8a;
+  margin-top: 0.15rem;
+  white-space: nowrap;
+  margin-right: 0.3rem;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* Tablets (e.g. iPad Mini, small laptops) */
+@media (max-width: 768px) {
+  .message,
+  .nameInput,
+  .messageInput {
+    font-size: 0.65rem;
+  }
+
+  .sendButton {
+    font-size: 0.75rem;
+  }
+
+  .charCount {
+    font-size: 0.55rem;
+  }
+
+  .closeButton {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .messageInput {
+    max-height: 3.5rem;
+  }
+}
+
+/* All phones, roughly 320px-480px (SE, standard, and Pro Max sizes) */
+@media (max-width: 480px) {
+  .message,
+  .nameInput,
+  .messageInput {
+    font-size: 0.6rem;
+  }
+
+  .sendButton {
+    font-size: 0.7rem;
+  }
+
+  .charCount {
+    font-size: 0.5rem;
+  }
+
+  .closeButton {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .messageInput {
+    max-height: 3rem;
+  }
+
+  .message {
+    gap: 0.35rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Smallest phones (e.g. iPhone SE, older Androids) */
+@media (max-width: 375px) {
+  .message,
+  .nameInput,
+  .messageInput {
+    font-size: 0.55rem;
+  }
+
+  .sendButton {
+    font-size: 0.65rem;
+  }
+
+  .charCount {
+    font-size: 0.45rem;
+  }
+
+  .closeButton {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .messageInput {
+    max-height: 2.75rem;
+  }
+}

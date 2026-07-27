@@ -2,6 +2,7 @@
 import { useState } from "react";
 import HoverImage from "./HoverImage";
 import Link from "next/link";
+import Laptop from "./laptop/Laptop";
 
 export default function Scene({ setShowIdCard, introStage }) {
   const [standHover, setStandHover] = useState(null);
@@ -134,7 +135,7 @@ export default function Scene({ setShowIdCard, introStage }) {
           labelClassName="scene-label-guitar"
         />
 
-        <div onClick={() => setShowIdCard(true)}>
+        {/* <div onClick={() => setShowIdCard(true)}>
           <HoverImage
             src="/laptop.webp"
             hoverSrc="/laptop-hover.png"
@@ -144,7 +145,9 @@ export default function Scene({ setShowIdCard, introStage }) {
             label="about me⋆˚꩜｡"
             labelClassName="scene-label-laptop"
           />
-        </div>
+        </div> */}
+
+        <Laptop />
       </div>
 
       {/* RIGHT: collage and stand */}
