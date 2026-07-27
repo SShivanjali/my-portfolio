@@ -68,6 +68,28 @@ export default function VisitorsLog({ onClose }) {
     }
   }, [messages]);
 
+// REACT TO REAL-TIME UPDATES
+  useEffect(() => {
+  const channel = supabase
+    .channel("visitors_log_changes")
+    .on(
+      "postgres_changes",
+      {
+        event: "*",
+        schema: "public",
+        table: "visitors_log",
+      },
+      () => {
+        fetchMessages();
+      }
+    )
+    .subscribe();
+
+  return () => {
+    supabase.removeChannel(channel);
+  };
+}, []);
+
   return (
     <div className={styles.visitorsLog}>
       <button className={styles.closeButton} onClick={onClose}>
