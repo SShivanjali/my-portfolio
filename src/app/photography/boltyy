@@ -1,0 +1,291 @@
+"use client"
+import { useState } from "react";
+import styles from "./photography.module.css";
+
+const photos = [
+  "/cam/beachPlusIcecream.jpg",
+  "/cam/greenbluesky2.jpg",
+  "/cam/greenbluesky3.jpg",
+  "/cam/playground.jpg",
+  "/cam/playground2.jpeg",
+  "/cam/damanPano.jpg",
+  "/cam/buildings.jpg",
+  "/cam/horse.jpg",
+  "/cam/sky3.jpg",
+  "/cam/sisBeach.jpg",
+  "/cam/cloud.jpg",
+  "/cam/bougenville.jpeg",
+  "/cam/chandelier.jpeg",
+  "/cam/door.jpeg",
+  "/cam/books.jpeg",
+  "/cam/fountain.jpeg",
+  "/cam/narmada-canal.jpeg",
+  "/cam/read.jpeg",
+  "/cam/Dblock.jpg",
+  "/cam/star!.jpg",
+  "/cam/cat.jpeg",
+  "/cam/r-city.jpeg",
+  "/cam/blurAbit.jpg",
+];
+
+const FRAME_GAP = 10; // px, matches CSS gap
+
+function getFrameWidth() {
+  if (typeof window === "undefined") return 270;
+  return Math.min(Math.max(270, window.innerWidth * 0.6), 450);
+}
+
+export default function Photography() {
+  const [revealedCount, setRevealedCount] = useState(0);
+  // translateX offset applied to the filmTrack (the flex row inside the strip wrapper)
+  const [offset, setOffset] = useState(0);
+  // whether the CSS transition is active
+  const [animated, setAnimated] = useState(false);
+  const [reeling, setReeling] = useState(false);
+
+  // Pull one more frame out of the canister.
+  // The trick: add the new frame to the DOM at index 0, simultaneously shift
+  // translateX by -(frameWidth + gap) with NO transition so the existing frames
+  // appear not to move. Then, in the next paint, animate translateX back to 0 —
+  // the entire strip slides right as one physical object.
+  const advance = () => {
+    if (reeling || revealedCount >= photos.length) return;
+
+    const frameW = getFrameWidth();
+    const shift = frameW + FRAME_GAP;
+
+    // Batch: new frame enters DOM + offset compensates (no transition yet)
+    setRevealedCount((c) => c + 1);
+    setOffset((prev) => prev - shift);
+    setAnimated(false);
+
+    // After two animation frames (DOM painted), trigger the slide
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setOffset((prev) => prev + shift);
+        setAnimated(true);
+      });
+    });
+  };
+
+  // Reel the entire strip back into the canister.
+  const reelIn = () => {
+    if (reeling || revealedCount === 0) return;
+
+    const frameW = getFrameWidth();
+    // Move the track far enough left to hide all frames behind the canister
+    const totalShift = revealedCount * (frameW + FRAME_GAP) + 80;
+
+    setAnimated(true);
+    setOffset((prev) => prev - totalShift);
+    setReeling(true);
+
+    // Duration scales with strip length so long strips don't feel rushed
+    const duration = Math.min(600 + revealedCount * 40, 1800);
+
+    setTimeout(() => {
+      setRevealedCount(0);
+      setOffset(0);
+      setAnimated(false);
+      setReeling(false);
+    }, duration);
+  };
+
+  const handleCanisterClick = () => {
+    if (revealedCount === 0 && !reeling) {
+      advance();
+    } else if (!reeling) {
+      reelIn();
+    }
+  };
+
+  // Newest frame first so it sits closest to the canister mouth
+  const exposed = photos.slice(0, revealedCount).reverse();
+  const nextPeek = photos[revealedCount];
+
+  const isOpen = revealedCount > 0 || reeling;
+
+  return (
+    <main className={styles.stage}>
+      {/* Canister — higher z-index so emerging frames slide out from under it */}
+      <img
+        src="/cam/film_canister.png"
+        alt="Film canister"
+        className={`${styles.canister} ${isOpen ? styles.canisterOpened : ""}`}
+        onClick={handleCanisterClick}
+        style={{ cursor: reeling ? "default" : "pointer" }}
+      />
+
+      {/* Outer wrapper: handles left-position transition when canister opens */}
+      <div className={`${styles.stripWrap} ${isOpen ? styles.stripWrapOpen : ""}`}>
+        {/* Inner track: the single flex row that slides as one physical film strip */}
+        <div
+          className={styles.filmTrack}
+          style={{
+            transform: `translateX(${offset}px)`,
+            transition: animated ? "transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94)" : "none",
+          }}
+        >
+          {/* Black leader — shown before any frames are pulled */}
+          {!isOpen && <div className={styles.leader} />}
+
+          {/* Sliver of the next photo peeking out from the canister mouth */}
+          {isOpen && nextPeek && revealedCount < photos.length && (
+            <figure className={styles.peek} aria-hidden="true">
+              <img src={nextPeek} alt="" />
+            </figure>
+          )}
+
+          {/* All revealed frames, newest at index 0 (leftmost / closest to canister) */}
+          {exposed.map((src, i) => (
+            <figure
+              key={src}
+              className={`${styles.frame} ${i === 0 && !reeling ? styles.frameFront : ""}`}
+              onClick={i === 0 && !reeling ? advance : undefined}
+            >
+              <img src={src} alt={`Film frame ${revealedCount - i}`} />
+            </figure>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}
+
+
+/* ─── Layout ──────────────────────────────────────────────────── */
+
+.stage {
+  --canister-w: clamp(180px, 40vw, 420px);
+  --canister-left: 8vw;
+  --gap: 20px;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;          /* clips frames that travel off the right edge */
+  background: #111;
+}
+
+/* ─── Film canister ───────────────────────────────────────────── */
+
+.canister {
+  position: absolute;
+  top: 50%;
+  /* centred before opening */
+  left: calc(50% - var(--canister-w) / 2);
+  transform: translateY(-50%);
+  width: var(--canister-w);
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* must sit ON TOP of the film strip so frames slide out from under it */
+  z-index: 10;
+  user-select: none;
+}
+
+.canisterOpened {
+  left: var(--canister-left);
+}
+
+/* ─── Strip wrapper ───────────────────────────────────────────── */
+/*
+  This wrapper handles the one-time left-position jump when the canister
+  opens. It never changes left again — all subsequent motion is the
+  filmTrack translateX inside it.
+*/
+
+.stripWrap {
+  position: absolute;
+  top: 50%;
+  /* centred (out of view to the right of the canister) before opening */
+  left: calc(50% + var(--canister-w) / 2);
+  transform: translateY(-50%);
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 5;
+  /* allow frames to extend beyond the viewport without clipping here */
+  overflow: hidden;
+}
+
+.stripWrapOpen {
+  /* anchor the track's left edge right at the canister's mouth */
+  left: calc(var(--canister-left) + var(--canister-w) - 4px);
+}
+
+/* ─── Film track (the animated flex row) ─────────────────────── */
+/*
+  This is the single physical strip. translateX is driven by React state.
+  The transition is toggled on/off via inline style — never set it here.
+*/
+
+.filmTrack {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 10px;
+  will-change: transform;
+}
+
+/* ─── Individual frame ────────────────────────────────────────── */
+
+.frame {
+  flex-shrink: 0;
+  width: clamp(270px, 60vw, 450px);
+  margin: 0;
+  padding: 0;
+  border: 2px solid #2a2a2a;
+  border-radius: 2px;
+  background: #000;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* The front-most (newest) frame gets a cursor hint */
+.frameFront {
+  cursor: pointer;
+}
+
+/* ─── Next-frame peek ─────────────────────────────────────────── */
+/*
+  60 px sliver; the full-width image inside creates the illusion that
+  the next frame is partially inside the canister.
+*/
+
+.peek {
+  flex-shrink: 0;
+  width: 60px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-right: 2px solid #2a2a2a;
+  background: #000;
+}
+
+.peek img {
+  display: block;
+  /* full frame width so cropping shows the left edge of the photo */
+  width: clamp(270px, 60vw, 450px);
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* ─── Black leader (before any frames are pulled) ────────────── */
+
+.leader {
+  flex-shrink: 0;
+  width: 40px;
+  overflow: hidden;
+}
+
+.leader::after {
+  content: "";
+  display: block;
+  width: clamp(270px, 60vw, 450px);
+  aspect-ratio: 3 / 2;
+  background: #000;
+}

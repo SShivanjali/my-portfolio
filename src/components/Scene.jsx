@@ -68,21 +68,21 @@ export default function Scene({ setShowIdCard, introStage }) {
 
         <img src="/lamp.webp" alt="lamp" className="scene-lamp" />
 
-        <HoverImage
-          src="/cam.png"
-          hoverSrc="/cam-hover.png"
-          alt="camera"
-          className="scene-camera-wrapper"
-          hoverClassName="scene-camera-hover"
-          label={
-            <>
-              my clicks ⛶
-              <br />
-              coming soon ♡
-            </>
-          }
-          labelClassName="scene-label-camera"
-        />
+        <Link href="/photography" style={{ pointerEvents: "all" }}>
+          <HoverImage
+            src="/cam.png"
+            hoverSrc="/cam-hover.png"
+            alt="camera"
+            className="scene-camera-wrapper"
+            hoverClassName="scene-camera-hover"
+            label={
+              <>
+                my clicks ⛶
+              </>
+            }
+            labelClassName="scene-label-camera"
+          />
+        </Link>
 
         <HoverImage
           src="/popcorn.png"
