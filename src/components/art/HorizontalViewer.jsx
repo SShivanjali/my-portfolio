@@ -9,7 +9,7 @@ export default function HorizontalViewer({
   isDetailOpen,
   setIsDetailOpen,
 }) {
-  console.log("Detail Open:", isDetailOpen);
+  // console.log("Detail Open:", isDetailOpen);
 
   const [currentIndex, setCurrentIndex] = useState(() =>
     artworks.findIndex((a) => a.id === artwork.id),

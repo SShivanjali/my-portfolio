@@ -68,7 +68,7 @@ export default function VisitorsLog({ onClose }) {
     }
   }, [messages]);
 
-// REACT TO REAL-TIME UPDATES
+// REAL-TIME UPDATES
   useEffect(() => {
   const channel = supabase
     .channel("visitors_log_changes")
@@ -93,7 +93,7 @@ export default function VisitorsLog({ onClose }) {
   return (
     <div className={styles.visitorsLog}>
       <button className={styles.closeButton} onClick={onClose}>
-        ✕
+        X
       </button>
 
       <div ref={messagesRef} className={styles.messages}>

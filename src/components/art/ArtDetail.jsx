@@ -68,7 +68,7 @@ export default function ArtDetail({ artwork, artworkRect, onClose }) {
           cursor: "pointer",
         }}
       >
-        ✕
+        X
       </button>
 
       <h1
