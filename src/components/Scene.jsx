@@ -125,7 +125,7 @@ export default function Scene({ setShowIdCard, introStage }) {
         {/* DIARY */}
         <HoverImage
           src="/diary.png"
-          hoverSrc="/diary-hover.gif"
+          hoverSrc="/diary-hover.webp"
           alt="diary"
           className="scene-diary"
           hoverClassName="scene-diary-hovered"
@@ -186,10 +186,10 @@ export default function Scene({ setShowIdCard, introStage }) {
         <img
           src={
             standHover === "clothes"
-              ? "/cloth-hover.png"
+              ? "/cloth-hover.webp"
               : standHover === "shoes"
-                ? "/shoes.png"
-                : "/stand.png"
+                ? "/shoes.webp"
+                : "/stand.webp"
           }
           alt="stand"
           className="scene-stand"

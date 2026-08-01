@@ -309,7 +309,16 @@ body {
 /* --------------------------------------------------- */
 
 
+/* COLLAGE AND STAND*/
+
 /* COLLAGE */
+.scene-stand-group {
+  position: absolute;
+  bottom: 0;
+  left: 73vw;
+  width: 32vw;
+}
+
 .scene-collage {
   position: absolute;
   bottom: 2%;
@@ -334,12 +343,6 @@ body {
 
 
 /* CLOTH STAND */
-.scene-stand-group {
-  position: absolute;
-  bottom: 0;
-  left: 73vw;
-  width: 32vw;
-}
 
 .scene-stand {
   width: 85%;

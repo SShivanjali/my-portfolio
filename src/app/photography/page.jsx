@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import styles from "./photography.module.css";
 
 const photos = [
@@ -39,20 +39,6 @@ export default function Photography() {
   const [count, setCount] = useState(0);
   const [opened, setOpened] = useState(false);
 
-const videoRef = useRef(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    if (opened) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-      video.currentTime = 0; // rewind to start
-    }
-  }, [opened]);
-
   const showNextPhoto = () => {
     if (count >= photos.length - 1) return;
 
@@ -68,14 +54,11 @@ const videoRef = useRef(null);
 
   return (
     <main className={styles.photoGallery}>
-      <video
-        ref={videoRef}
-        className={`${styles.bgVideo} ${opened ? styles.open : ""}`}
-        src="/cam/filmdust.mp4"
-        muted
-        loop
-        playsInline
-      />
+<img
+  className={`${styles.bgVideo} ${opened ? styles.open : ""}`}
+  src="/cam/filmdust.webp"
+  alt=""
+/>
       <div className={styles.help}>
         ⓘ
         <div className={styles.helpText}>
