@@ -27,6 +27,9 @@
   justify-content: center;
   align-items: center;
   /* background: rgba(255, 0, 0, 0.2); */
+
+  container-type: inline-size;
+  container-name: laptop-screen;
 }
 
 .visitors-log-button {
